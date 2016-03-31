@@ -98,7 +98,8 @@ module.exports = class XMLStringifier
       chars = /[\u0000-\u0008\u000B-\u000C\u000E-\u001F\uD800-\uDFFF\uFFFE-\uFFFF]/
     chr = str.match chars
     if chr
-      throw new Error "Invalid character (#{chr}) in string: #{str} at index #{chr.index}"
+        #throw new Error "Invalid character (#{chr}) in string: #{str} at index #{chr.index}"
+        return str.slice(chr, 1)
 
     str
 
